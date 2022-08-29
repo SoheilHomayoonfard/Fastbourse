@@ -1,6 +1,6 @@
 //
 //  ComapanyCategories.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/27/22.
 //

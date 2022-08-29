@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/17/22.
 //
@@ -11,6 +11,8 @@ class SignInViewController: UIViewController {
     
     //MARK: - Subviews
     
+    @IBOutlet weak var TermsOfServicesLabel: UILabel!
+    @IBOutlet weak var VersionLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -23,6 +25,15 @@ extension SignInViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var result = ""
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+              result = version
+           }
+           if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+               result.append(contentsOf: ".\(build)")
+           }
+        VersionLabel.text = result
+        Styling.ColorizeText(textToColorize: "قوانین", label: TermsOfServicesLabel)
         self.styly()
     }
 }
@@ -35,7 +46,7 @@ extension SignInViewController {
         errorLabel.isHidden = true
         Styling.styleTextField(phoneNumberTextField)
         Styling.styleTextField(emailTextField)
-        Styling.styleFilledButton(registerButton)
+        Styling.styleHollowButton(registerButton)
     }
     
     func segueToPhoneCheck (){

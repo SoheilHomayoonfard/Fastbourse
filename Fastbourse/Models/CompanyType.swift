@@ -1,6 +1,6 @@
 //
 //  CompanyType.swift
-//  firstApp
+//  firFastboursestApp
 //
 //  Created by Gandom on 7/24/22.
 //

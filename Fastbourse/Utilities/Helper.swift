@@ -1,11 +1,12 @@
 //
 //  Helper.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/19/22.
 //
 
 import Foundation
+import UIKit
 
 class Helper {
     
@@ -20,4 +21,6 @@ class Helper {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
+    
 }

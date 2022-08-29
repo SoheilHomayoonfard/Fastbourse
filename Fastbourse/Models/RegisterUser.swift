@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/22/22.
 //

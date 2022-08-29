@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSansXFaNum-Bold.ttf">
+            <string>IRANSansXFaNum-Bold</string>
+        </array>
+        <array key="IRANSansXFaNum-Regular.ttf">
+            <string>IRANSansXFaNum-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,72 +24,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-K9-4zL">
-                                <rect key="frame" x="40" y="346" width="310" height="264"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cam-N8-Tgx">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="WYj-yG-SWI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" white="0.58361525759999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="phoneFieldCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="ncy-ZU-59F"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLI-zC-qQc">
-                                        <rect key="frame" x="0.0" y="80" width="310" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="drM-uf-zGp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" white="0.58361525759999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="emailFieldCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="93G-XL-E0E"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RT-Rr-Gsp">
-                                        <rect key="frame" x="0.0" y="160" width="310" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="cpn-Vm-5hT"/>
-                                        </constraints>
-                                        <buttonConfiguration key="configuration" style="plain" title="Register">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA7-BY-FHc"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Valid Phone Number!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-XN-k0z">
-                                        <rect key="frame" x="0.0" y="240" width="310" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" systemColor="systemRedColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="‌‌‌Fastbourse icon " adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="LEi-r8-boy">
+                                <rect key="frame" x="95" y="63" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" fixedFrame="YES" text="برای ادامه استفاده از نرم افزار FastBourse باید ثبت نام کنید.  ‌" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-vj-83d" userLabel="RegisterNoticeLabel" customClass="RegisterNoticeLabel" customModule="Fastbourse" customModuleProvider="target">
+                                <rect key="frame" x="95" y="328" width="200" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="شماره همراه" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cam-N8-Tgx">
+                                <rect key="frame" x="78" y="393" width="235" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="phoneFieldCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="ncy-ZU-59F"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="پست الکترونیکی" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLI-zC-qQc">
+                                <rect key="frame" x="78" y="431" width="235" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="emailFieldCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="93G-XL-E0E"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RT-Rr-Gsp">
+                                <rect key="frame" x="160" y="487" width="70" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ثبت نام">
+                                    <fontDescription key="titleFontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA7-BY-FHc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="با ادامه دادن فرآیند، قوانین برنامه فست بورس را می پذیرم." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcl-pO-EqB">
+                                <rect key="frame" x="35" y="528" width="321" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="شماره همراه نامعتبر است!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-XN-k0z">
+                                <rect key="frame" x="9" y="294" width="373" height="44.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="19"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-cr-jdS">
+                                <rect key="frame" x="167" y="772" width="57" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
+                                <color key="textColor" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.1647058824" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Q2Z-K9-4zL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="23H-rV-en5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q2Z-K9-4zL" secondAttribute="trailing" constant="40" id="5gc-ib-wOC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q2Z-K9-4zL" secondAttribute="bottom" constant="200" id="kki-Qm-9l3"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="jEz-3t-cZn"/>
                     <connections>
+                        <outlet property="TermsOfServicesLabel" destination="Pcl-pO-EqB" id="t2I-VL-0HD"/>
+                        <outlet property="VersionLabel" destination="gdV-cr-jdS" id="0CX-nt-9iF"/>
                         <outlet property="emailTextField" destination="bLI-zC-qQc" id="FXx-bt-sjy"/>
                         <outlet property="errorLabel" destination="hVy-XN-k0z" id="tN3-yY-MSn"/>
                         <outlet property="phoneNumberTextField" destination="cam-N8-Tgx" id="jR9-7o-YzC"/>
@@ -166,7 +188,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="74s-pr-F6D"/>
-                        <color key="backgroundColor" red="0.1647058824" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="74s-pr-F6D" firstAttribute="bottom" secondItem="040-V5-q7v" secondAttribute="bottom" constant="230" id="AIH-O4-0Pk"/>
                             <constraint firstItem="74s-pr-F6D" firstAttribute="trailing" secondItem="040-V5-q7v" secondAttribute="trailing" constant="40" id="c09-05-WD3"/>
@@ -196,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" red="0.1647058824" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" id="2AY-uS-hif">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
@@ -318,6 +340,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="‌‌‌Fastbourse icon " width="256" height="256"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

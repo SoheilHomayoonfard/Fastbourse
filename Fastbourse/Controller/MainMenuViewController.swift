@@ -1,6 +1,6 @@
 //
 //  MainMenuViewController.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/17/22.
 //

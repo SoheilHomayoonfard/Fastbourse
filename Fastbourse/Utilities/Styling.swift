@@ -1,6 +1,6 @@
 //
 //  Styling.swift
-//  firstApp
+//  Fastbourse
 //
 //  Created by Gandom on 7/17/22.
 //
@@ -10,14 +10,9 @@ import UIKit
 class Styling {
     
     static func styleTextField(_ textfield:UITextField) {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
-        bottomLine.backgroundColor = #colorLiteral(red: 0.583615303, green: 0.583615303, blue: 0.583615303, alpha: 1)
-        textfield.borderStyle = .none
-        textfield.layer.addSublayer(bottomLine)
-        textfield.textColor = UIColor.init(red: 15, green: 107, blue: 99, alpha: 1)
-        textfield.tintColor =  UIColor.init(red: 15, green: 107, blue: 99, alpha: 1)
-        
+        textfield.borderStyle = .roundedRect
+        textfield.layer.cornerRadius = 10
+        textfield.layer.borderColor = #colorLiteral(red: 0.8382223845, green: 0.8382223845, blue: 0.8382223248, alpha: 1)
     }
     
     static func styleFilledButton(_ button:UIButton) {
@@ -27,9 +22,18 @@ class Styling {
     }
     
     static func styleHollowButton(_ button:UIButton) {
-        button.layer.borderWidth = 2
-        button.layer.borderColor = #colorLiteral(red: 0.583615303, green: 0.583615303, blue: 0.583615303, alpha: 1)
-        button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.white
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+    static func ColorizeText(textToColorize:String,label: UILabel) {
+        let color = UIColor.init(cgColor: #colorLiteral(red: 0, green: 0.4677459002, blue: 1, alpha: 1));
+        let attrsString =  NSMutableAttributedString(string:label.text!);
+        let range = (label.text! as NSString).range(of: textToColorize)
+        if (range.length > 0) {
+            attrsString.addAttribute(NSAttributedString.Key.foregroundColor,value:color,range:range)
+        }
+        label.attributedText = attrsString
     }
 }
