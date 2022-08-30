@@ -11,6 +11,8 @@ class PhoneCheckViewController: UIViewController {
     
     //MARK: - Subviews
     
+    @IBOutlet weak var activationCodeValidationLabel: UILabel!
+    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var activationCodeTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var resendButton: UIButton!
@@ -19,7 +21,7 @@ class PhoneCheckViewController: UIViewController {
     
     //MARK: - Properties
     
-    var counter : Int = RegisterUser.ActivateValidationTime
+    var counter : Int = 120
     var activateCodeValidationTime = RegisterUser.ActivateValidationTime
     var timer : Timer!
     var ValidationTimer : Timer!
@@ -33,15 +35,13 @@ extension PhoneCheckViewController {
         super.viewDidLoad()
         initTimers()
         ErrorLabel.isHidden = true
-        Styling.styleTextField(activationCodeTextField)
-        Styling.styleFilledButton(signUpButton)
-        Styling.styleFilledButton(resendButton)
-        Styling.styleFilledButton(unwindButton)
+        setVersion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        styleUI()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -54,18 +54,49 @@ extension PhoneCheckViewController {
 //MARK: - Methods
 
 extension PhoneCheckViewController {
+    
+    func styleUI() {
+        Styling.styleTextField(activationCodeTextField)
+        Styling.styleHollowButton(signUpButton)
+        Styling.styleHollowButton(resendButton)
+        Styling.styleHollowButton(unwindButton)
+    }
+    
+    func setVersion() {
+        var result = ""
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+              result = version
+           }
+           if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+               result.append(contentsOf: ".\(build)")
+           }
+        versionLabel.text = result
+    }
+    
     func initTimers () {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(resendStep), userInfo: nil, repeats: true)
         ValidationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(validationStep), userInfo: nil, repeats: true)
     }
     
+
+    
+    func getFormatetTime(_ time:Int) -> String {
+        let min: Int = time/60
+        let second = time - (min * 60)
+        if (min < 1){
+            return "\(second)"
+        }
+        return "\(min):\(second)"
+    }
+    
     @objc func resendStep() {
         if counter > 0{
             counter -= 1
-            resendButton.setTitle("Resend Activation Code in \(counter)", for: .normal)
+            let formatedTime = getFormatetTime(counter)
+            resendButton.setTitle("دریافت مجدد کد فعالسازی     (\(formatedTime))", for: .normal)
         }else{
             timer.invalidate()
-            resendButton.setTitle("Resend Activation Code", for: .normal)
+            resendButton.setTitle("دریافت مجدد کد فعالسازی", for: .normal)
             resendButton.isEnabled = true
         }
     }
@@ -73,9 +104,12 @@ extension PhoneCheckViewController {
     @objc func validationStep() {
         if activateCodeValidationTime > 0 {
             activateCodeValidationTime -= 1
+            let formatedTime = getFormatetTime(activateCodeValidationTime)
+            activationCodeValidationLabel.text = "زمان باقی مانده:  \(formatedTime)"
         }else{
             isCodeValid = false
             ValidationTimer.invalidate()
+            activationCodeValidationLabel.text = "زمان باقی مانده: ۰"
         }
     }
     
@@ -86,12 +120,11 @@ extension PhoneCheckViewController {
     func resetTimers(){
         isCodeValid = true
         activateCodeValidationTime = RegisterUser.ActivateValidationTime
-        counter = 20
-        resendButton.isEnabled = false
+        counter = 120
         initTimers()
     }
     
-    //MARK: Networking
+//MARK: - Networking
     
     func fetchActivationData(ActivationCode activationCode : Int) {
         let params: Parameters = [
@@ -136,6 +169,8 @@ extension PhoneCheckViewController {
     
     @IBAction func resendButtonPressed(_ sender: Any) {
         fetchResendActivationData()
+        resendButton.isEnabled = false
+        resetTimers()
     }
     
     @IBAction func unwindButtonPressed(_ sender: Any) {

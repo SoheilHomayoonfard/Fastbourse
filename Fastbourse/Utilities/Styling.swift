@@ -22,10 +22,11 @@ class Styling {
     }
     
     static func styleHollowButton(_ button:UIButton) {
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 0.7
         button.layer.cornerRadius = 5
         button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
+    
     
     static func ColorizeText(textToColorize:String,label: UILabel) {
         let color = UIColor.init(cgColor: #colorLiteral(red: 0, green: 0.4677459002, blue: 1, alpha: 1));
@@ -35,5 +36,10 @@ class Styling {
             attrsString.addAttribute(NSAttributedString.Key.foregroundColor,value:color,range:range)
         }
         label.attributedText = attrsString
+    }
+    
+    static func setFontForButton(textToSet:String,button:UIButton){
+        let newFont = UIFont.init(name: "IRANSansXFaNum-Bold" , size: 13)
+        button.setTitle(textToSet, for: .normal)
     }
 }

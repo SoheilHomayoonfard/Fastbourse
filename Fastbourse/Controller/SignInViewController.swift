@@ -25,15 +25,6 @@ extension SignInViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var result = ""
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-              result = version
-           }
-           if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-               result.append(contentsOf: ".\(build)")
-           }
-        VersionLabel.text = result
-        Styling.ColorizeText(textToColorize: "قوانین", label: TermsOfServicesLabel)
         self.styly()
     }
 }
@@ -42,11 +33,23 @@ extension SignInViewController {
 
 extension SignInViewController {
     
+    func setVersion() {
+        var result = ""
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+              result = version
+           }
+           if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+               result.append(contentsOf: ".\(build)")
+           }
+        VersionLabel.text = result
+    }
+    
     func styly() {
         errorLabel.isHidden = true
         Styling.styleTextField(phoneNumberTextField)
         Styling.styleTextField(emailTextField)
         Styling.styleHollowButton(registerButton)
+        Styling.ColorizeText(textToColorize: "قوانین", label: TermsOfServicesLabel)
     }
     
     func segueToPhoneCheck (){
@@ -83,11 +86,11 @@ extension SignInViewController {
             if Helper.isValidPhoneNumber(cleanPhoneNumber) {
                 errorLabel.isHidden = true
             } else {
-                errorLabel.text = "Please enter valid Phone Number!"
+                errorLabel.text = "شماره همراه نامعتبر است!"
                 errorLabel.isHidden = false
             }
         }else {
-            errorLabel.text = "Please enter your number!"
+            errorLabel.text = "لطفا شماره خود را وارد کنید!"
             errorLabel.isHidden = false
         }
     }
@@ -99,11 +102,11 @@ extension SignInViewController {
             if Helper.isValidEmail(cleanEmailField){
                 errorLabel.isHidden = true
             } else {
-                errorLabel.text = "Please enter valid Email!"
+                errorLabel.text = "پست الکترونیکی نامعتبر است!"
                 errorLabel.isHidden = false
             }
         }else {
-            errorLabel.text = "Please enter your Email!"
+            errorLabel.text = "لطفا پست الکترونیکی خود را وارد کنید!"
             errorLabel.isHidden = false
         }
     }

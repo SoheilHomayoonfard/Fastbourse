@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y3U-hr-e3S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sYf-26-M0Q">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -81,18 +81,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="شماره همراه نامعتبر است!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-XN-k0z">
-                                <rect key="frame" x="9" y="294" width="373" height="44.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="19"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-cr-jdS">
                                 <rect key="frame" x="167" y="772" width="57" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
                                 <color key="textColor" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="شماره همراه نامعتبر است!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-XN-k0z">
+                                <rect key="frame" x="16" y="306" width="358" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -124,84 +124,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="040-V5-q7v">
-                                <rect key="frame" x="40" y="279.66666666666674" width="310" height="300.33333333333326"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27B-Gj-d1c">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
-                                        <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" white="0.58361525759999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-EA-tfv">
-                                        <rect key="frame" x="0.0" y="70" width="310" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
-                                        <connections>
-                                            <action selector="signUpButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="QA1-Vl-eTz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aST-it-M34">
-                                        <rect key="frame" x="0.0" y="140" width="310" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Resend Activation Code in 60 ">
-                                            <fontDescription key="titleFontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" systemColor="linkColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="resendButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="Tyu-T4-ztf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttj-Oc-5PO">
-                                        <rect key="frame" x="0.0" y="210" width="310" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="xTe-F7-9fe"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Use different number"/>
-                                        <connections>
-                                            <action selector="unwindButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="GEo-Ra-P6r"/>
-                                            <segue destination="ckM-1r-4tT" kind="unwind" unwindAction="unwindToSignIn:" id="uWO-JB-TS9"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Activation Code!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnA-N9-7ff">
-                                        <rect key="frame" x="0.0" y="279.99999999999994" width="310" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" systemColor="systemRedColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Ttj-Oc-5PO" firstAttribute="height" secondItem="27B-Gj-d1c" secondAttribute="height" id="8BU-r1-3qG"/>
-                                    <constraint firstItem="Ttj-Oc-5PO" firstAttribute="height" secondItem="RnA-N9-7ff" secondAttribute="height" multiplier="2.45902" id="GfP-Qg-Kyx"/>
-                                    <constraint firstItem="aST-it-M34" firstAttribute="height" secondItem="27B-Gj-d1c" secondAttribute="height" id="cZr-Hv-cQJ"/>
-                                    <constraint firstItem="bNT-EA-tfv" firstAttribute="height" secondItem="27B-Gj-d1c" secondAttribute="height" id="cnp-VT-b4d"/>
-                                </constraints>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-EA-tfv">
+                                <rect key="frame" x="136" y="405" width="119" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="فعالسازی حساب">
+                                    <fontDescription key="titleFontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signUpButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="QA1-Vl-eTz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aST-it-M34">
+                                <rect key="frame" x="70" y="468" width="250" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="14"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="دریافت مجدد کد فعالسازی  (۲:۰۰)"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resendButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="Tyu-T4-ztf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="شماره فعالسازی" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27B-Gj-d1c">
+                                <rect key="frame" x="70" y="345" width="250" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="‌‌‌Fastbourse icon " translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-AL-QB3">
+                                <rect key="frame" x="95" y="64" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttj-Oc-5PO">
+                                <rect key="frame" x="116" y="509" width="159" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ورود با شماره تلفن دیگر">
+                                    <fontDescription key="titleFontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="13"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="unwindButtonPressed:" destination="sYf-26-M0Q" eventType="touchUpInside" id="GEo-Ra-P6r"/>
+                                    <segue destination="ckM-1r-4tT" kind="unwind" unwindAction="unwindToSignIn:" id="uWO-JB-TS9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-eu-MNY">
+                                <rect key="frame" x="167" y="772" width="57" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="14"/>
+                                <color key="textColor" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="زمان باقی مانده:  ۵:۰۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-QO-arw">
+                                <rect key="frame" x="136" y="726" width="119" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Regular" family="IRANSansXFaNum" pointSize="11"/>
+                                <color key="textColor" red="0.59215688710000003" green="0.60392159219999997" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="شماره فعالسازی اشتباه است!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaI-kE-Pm6">
+                                <rect key="frame" x="9" y="307" width="373" height="44.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="IRANSansXFaNum-Bold" family="IRANSansXFaNum" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="74s-pr-F6D"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="74s-pr-F6D" firstAttribute="bottom" secondItem="040-V5-q7v" secondAttribute="bottom" constant="230" id="AIH-O4-0Pk"/>
-                            <constraint firstItem="74s-pr-F6D" firstAttribute="trailing" secondItem="040-V5-q7v" secondAttribute="trailing" constant="40" id="c09-05-WD3"/>
-                            <constraint firstItem="040-V5-q7v" firstAttribute="leading" secondItem="74s-pr-F6D" secondAttribute="leading" constant="40" id="gn4-z4-EcD"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rro-dg-heL"/>
                     <connections>
-                        <outlet property="ErrorLabel" destination="RnA-N9-7ff" id="0TR-C8-arZ"/>
+                        <outlet property="ErrorLabel" destination="YaI-kE-Pm6" id="crE-jg-81Q"/>
                         <outlet property="activationCodeTextField" destination="27B-Gj-d1c" id="y4x-df-xup"/>
+                        <outlet property="activationCodeValidationLabel" destination="BhQ-QO-arw" id="NvV-Hs-idN"/>
                         <outlet property="resendButton" destination="aST-it-M34" id="X42-GP-1AE"/>
                         <outlet property="signUpButton" destination="bNT-EA-tfv" id="jOh-73-h2L"/>
                         <outlet property="unwindButton" destination="Ttj-Oc-5PO" id="E9Z-a4-edL"/>
+                        <outlet property="versionLabel" destination="3Bo-eu-MNY" id="v4M-iu-YpU"/>
                         <segue destination="pK7-eO-WOp" kind="show" identifier="SegueToMainMenu" id="ahH-BJ-oTW"/>
                     </connections>
                 </viewController>
